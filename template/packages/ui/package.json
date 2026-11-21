@@ -1,0 +1,22 @@
+{
+    "name": "@project-template/ui",
+    "private": true,
+    "type": "module",
+    "exports": {
+        "./styles.css": "./src/styles/global.css"
+    },
+    "scripts": {
+        "fmt:fix": "oxfmt",
+        "fmt:check": "oxfmt --check",
+        "lint:check": "oxlint",
+        "lint:fix": "oxlint --fix"
+    },
+    "devDependencies": {
+        "@project-template/oxfmt": "workspace:*",
+        "@project-template/oxlint": "workspace:*",
+        "tailwindcss": "catalog:"
+    },
+    "peerDependencies": {
+        "@tailwindcss/postcss": "catalog:"
+    }
+}
