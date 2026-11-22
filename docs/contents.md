@@ -4,7 +4,7 @@ This foundation gives agents and contributors a working structure while leaving 
 
 ## Included
 
-- A minimal Next.js app in `apps/web`, a feature-based structure, shared styles and theme and motion providers in `packages/ui`. The home page displays configured title and description; it is a placeholder to replace.
+- A minimal Next.js app in `apps/web`, a feature-based structure, shared styles, theme and motion providers, and Lucide icons for theme controls in `packages/ui`. The home page displays configured title and description; it is a placeholder to replace.
 
 - pnpm workspaces, Turbo tasks, TypeScript, Oxlint, Oxfmt and Vitest configuration to provide shared checks without inventing a new toolchain. Package manifests and configuration own exact versions and scripts.
 
@@ -24,7 +24,7 @@ Use this checklist when starting a project. Decide what applies with the user, r
 
 - [ ] **Identity and discovery:** Decide on brand assets, favicon and Apple icon, social sharing images, indexing, sitemap and robots rules. Only basic site metadata is supplied. If adding a `public/` directory, update the production image as described in [operations](../template/docs/delivery/operations.md).
 
-- [ ] **UI and presentation:** Decide whether to add a component library, accessible primitives, icons, typography, theme styles or animation. `packages/ui` supplies styles and providers, not a component library or product theme.
+- [ ] **UI and presentation:** Decide whether to add a component library, accessible primitives, more icons, typography, theme styles or animation. `packages/ui` supplies styles, providers and theme-control icons, not a component library or product theme.
 
 - [ ] **Content and services:** Decide on content authoring, data storage, authentication, analytics, error reporting and other integrations as needed; none is configured by default.
 

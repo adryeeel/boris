@@ -1,11 +1,13 @@
 # UI package
 
-`packages/ui` contains a shared Tailwind stylesheet, exported as `@project-template/ui/styles.css`. Its source scan includes the application. It also exports theme and motion providers from `@project-template/ui/providers/theme` and `@project-template/ui/providers/motion`; the web layout installs both.
+`packages/ui` owns reusable UI shared with the application. Application-specific composition stays in the app; see [Application structure](application.md).
 
-The theme provider uses system preference by default and applies a class to `html`; `useTheme` exposes theme state. The motion provider enables lazy DOM animations and respects the user's reduced-motion preference. Import `m` and the shared motion hooks from the motion provider export. The providers do not supply a product theme or animation.
+Before using or extending the package, inspect its [manifest](../../packages/ui/package.json) for current exports, dependencies and scripts. Follow the export targets to inspect available APIs and defaults, including icons and providers.
 
-Add shared components only when needed. Keep their implementations under `src/components/`, and expose deliberate paths through the [package exports](../../packages/ui/package.json). The UI package maps `@project-template/ui/*` to its `src/` directory; keep imports aligned with exported paths so consuming applications can resolve them. Prefer native HTML; introduce a UI dependency only for a real requirement. Shared third-party UI belongs here so upgrades and wrappers have one owner.
+Consume shared UI through declared package exports. Public paths can differ from the source layout and TypeScript aliases. Add shared components under `src/components/` when needed, and use an existing wildcard export when it covers the new module; otherwise declare a suitable public path in the manifest.
 
-The package ships source without a build step and is listed in the app's `transpilePackages`. Declare runtime dependencies in this package, and consumer contracts in peer dependencies where appropriate. It is configured for tests using the [shared browser configuration](../testing/README.md).
+Keep shared third-party UI dependencies in this package. Declare runtime dependencies here and consumer contracts in peer dependencies where appropriate. Follow [Code conventions](../quality/code.md) when deciding whether a dependency or wrapper is needed.
 
-Application-specific composition stays in `apps/web/src/features` or `components`. See [Design](../design/README.md) for accessibility and visual decisions.
+When changing shared styles, providers or packaging, check the consuming app's [layout](../../apps/web/src/app/layout.tsx) and [Next.js configuration](../../apps/web/next.config.ts) for affected imports, provider setup and transpilation settings. Verify public imports from the consuming app, since an internal alias alone does not establish a working package export.
+
+Follow [Design](../design/README.md) for accessibility and visual decisions, including accessible names for icon-only controls. Choose checks using [Testing](../testing/README.md) and the package's current configuration.
