@@ -10,4 +10,6 @@
 
 The app consumes shared styles and providers from `packages/ui`. Formatter, linter, TypeScript and Vitest packages retain shared configuration. Add reusable UI there when needed and declare its dependencies and exports explicitly.
 
+For product scope and planned domain boundaries, start with [Product](../product/README.md).
+
 Turbo task dependencies and output caching live in [turbo.json](../../turbo.json). See [CI](../delivery/ci.md) when changing task behavior.

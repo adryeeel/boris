@@ -11,3 +11,7 @@ Keep shared third-party UI dependencies in this package. Declare runtime depende
 When changing shared styles, providers or packaging, check the consuming app's [layout](../../apps/web/src/app/layout.tsx) and [Next.js configuration](../../apps/web/next.config.ts) for affected imports, provider setup and transpilation settings. Verify public imports from the consuming app, since an internal alias alone does not establish a working package export.
 
 Follow [Design](../design/README.md) for accessibility and visual decisions, including accessible names for icon-only controls. Choose checks using [Testing](../testing/README.md) and the package's current configuration.
+
+## shadcn CLI
+
+The UI package owns the `components.json` configuration for Base Luma, with Lucide icons and neutral starting tokens. From the repository root, run `pnpm dlx shadcn@latest add <component> -c packages/ui` to install shared primitives in `packages/ui/src/components/primitive`; import them through paths such as `@project-template/ui/primitive/button`. Add application-specific composition in `apps/web`, since package-only CLI use also places blocks in the UI package. Reapplying a preset can overwrite theme and icon settings; review its changes.

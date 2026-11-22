@@ -20,16 +20,42 @@ env:
 
 jobs:
     check:
-        if: ${{ github.event_name != 'pull_request' || github.event.pull_request.draft == false }}
+        name: ${{ matrix.check }}
+        if: >-
+            ${{ github.event_name != 'pull_request' ||
+                github.event.pull_request.draft == false }}
         runs-on: ubuntu-latest
         timeout-minutes: 15
-        steps:
-            - uses: actions/checkout@v7
-            - uses: actions/setup-node@v7
-              with:
-                  node-version-file: .node-version
 
-            - uses: pnpm/action-setup@v6
-            - run: pnpm install --frozen-lockfile
-            - run: pnpm --filter web exec playwright install chromium
-            - run: pnpm run ci
+        strategy:
+            fail-fast: false
+            matrix:
+                include:
+                    - check: Format
+                      command: pnpm fmt:check
+
+                    - check: Lint
+                      command: pnpm lint:check && pnpm turbo run lint:check
+
+                    - check: Types
+                      command: pnpm turbo run type:check
+
+                    - check: Tests
+                      command: pnpm turbo run test:check
+
+                    - check: Build
+                      command: pnpm turbo run build --filter=web
+
+        steps:
+            - name: Check out source
+              uses: actions/checkout@v7
+
+            - name: Set up environment
+              uses: ./.github/actions/ci-setup
+
+            - name: Install Chromium
+              if: ${{ matrix.check == 'Tests' }}
+              run: pnpm --filter web exec playwright install chromium
+
+            - name: Run ${{ matrix.check }}
+              run: ${{ matrix.command }}

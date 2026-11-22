@@ -4,7 +4,7 @@ This foundation gives agents and contributors a working structure while leaving 
 
 ## Included
 
-- A minimal Next.js app in `apps/web`, a feature-based structure, shared styles, theme and motion providers, and Lucide icons for theme controls in `packages/ui`. The home page displays configured title and description; it is a placeholder to replace.
+- A minimal Next.js app in `apps/web`, a feature-based structure, neutral styles, theme and motion providers, Lucide icons, and package-owned shadcn configuration in `packages/ui`. The home page displays configured title and description; it is a placeholder to replace.
 
 - pnpm workspaces, Turbo tasks, TypeScript, Oxlint, Oxfmt and Vitest configuration to provide shared checks without inventing a new toolchain. Package manifests and configuration own exact versions and scripts.
 
@@ -22,9 +22,9 @@ There is no setup generator or CLI. Agents and contributors configure the worksp
 
 Use this checklist when starting a project. Decide what applies with the user, record unresolved choices, and add only what the project needs. The template supplies placeholders, not product requirements or brand claims.
 
-- [ ] **Identity and discovery:** Decide on brand assets, favicon and Apple icon, social sharing images, indexing, sitemap and robots rules. Only basic site metadata is supplied. If adding a `public/` directory, update the production image as described in [operations](../template/docs/delivery/operations.md).
+- [ ] **Identity and discovery:** Decide on brand assets, favicon and Apple icon, social sharing images, indexing, sitemap and robots rules. Only basic site metadata is supplied. The production image includes `apps/web/public`.
 
-- [ ] **UI and presentation:** Decide whether to add a component library, accessible primitives, more icons, typography, theme styles or animation. `packages/ui` supplies styles, providers and theme-control icons, not a component library or product theme.
+- [ ] **UI and presentation:** Choose accessible primitives, icons, typography, product theme and animation as needed. `packages/ui` supplies a neutral shadcn setup, styles, providers and theme-control icons; add primitives when required.
 
 - [ ] **Content and services:** Decide on content authoring, data storage, authentication, analytics, error reporting and other integrations as needed; none is configured by default.
 
