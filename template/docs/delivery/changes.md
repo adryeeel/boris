@@ -1,6 +1,6 @@
 # Change the pipeline
 
-Read [CI](ci.md) and [Operations](operations.md) before changing their configuration. Keep package versions aligned, frozen dependency installation, secret exclusion from images, an unprivileged runtime and container health checking.
+Read [CI](ci.md), [CD](cd.md) and [Operations](operations.md) before changing their configuration. Keep package versions aligned, frozen dependency installation, secret exclusion from images, an unprivileged runtime and container health checking.
 
 Parse changed YAML and use actionlint when available. Verify the root scripts and selected Turbo tasks, rather than treating setup/cache output as application evidence. Task-input changes need an uncached check of the affected behavior. Changes to global preferences must invalidate the web build.
 

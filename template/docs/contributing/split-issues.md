@@ -4,7 +4,7 @@ Use [Demand planning](demand-planning.md) for the live plan and discovered work.
 
 ## Branches and integration
 
-A complete, safely deployable slice can branch from `master` and merge back after review, checks and authorization. Preserve the existing experience when incomplete functionality is not ready for release; there is no automatic deployment.
+A complete, safely deployable slice can branch from `master` and merge back after review, checks and authorization. Preserve the existing experience when incomplete functionality is not ready for release; deployment is opt-in and follows successful CI.
 
 When slices must ship together, create one integration branch for the demand. Start slice branches from its current tip and target it with their PRs. Independent work can proceed in parallel with disjoint ownership; dependent work waits for its contracts and compatible base. After a squash merge, start dependent branches from the updated integration tip. Update existing branches explicitly and verify ancestry; do not use `git merge -s ours` to hide unexplained conflicts.
 

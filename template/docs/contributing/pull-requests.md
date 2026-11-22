@@ -29,4 +29,4 @@ echo '<type>(<scope>): <subject> (#<n>)' | pnpm exec commitlint
 gh pr merge <n> --squash --subject '<type>(<scope>): <subject> (#<n>)' --body '' --delete-branch
 ```
 
-Merging to `master` runs CI; there is no automatic [deployment](../delivery/operations.md). Report the PR URL, head, checks/review state and remaining action.
+Merging to `master` runs CI; a successful push can trigger [deployment](../delivery/cd.md) if enabled. Report the PR URL, head, checks/review state and remaining action.

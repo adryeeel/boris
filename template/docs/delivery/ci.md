@@ -6,4 +6,4 @@ CI checks the whole workspace. Use `pnpm turbo run <task> --affected` locally wh
 
 Turbo caches outputs and task results according to [turbo.json](../../turbo.json). Lint, type and test tasks depend on a `transit` task so dependency changes invalidate consumers. Markdown is excluded from code-task inputs but remains a formatter input. Site constants are included in the web package inputs, so changes invalidate its build.
 
-No remote cache is configured. Add remote caching through authorized account configuration rather than putting credentials in tracked files. A passing Next build does not prove Docker packaging or a production deployment.
+No remote cache is configured. Add remote caching through authorized account configuration rather than putting credentials in tracked files. A passing Next build does not prove Docker packaging or a production deployment. Successful `master` push runs can trigger [CD](cd.md) when explicitly enabled.

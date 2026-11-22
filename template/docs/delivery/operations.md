@@ -12,6 +12,6 @@ Compose publishes on loopback. Set `PORT` for a different host port and `COMPOSE
 
 `apps/web/src/const/site.ts` is consumed at build time. Rebuild the image after changing site preferences. No `.env` file, proxy network, image registry or production credentials are required for local Docker use.
 
-For production, explicitly choose a host, domain, public port/proxy, TLS, secret source and rollout/rollback process. Adding public assets later also requires copying `apps/web/public` into the runtime image; create it when needed.
+For production deployment, follow [CD and secrets](cd.md). Configure domain, proxy and TLS for the target. Adding public assets also requires copying `apps/web/public` into the runtime image; create it when needed.
 
 Use `agents/skills/delivery/scripts/docker-test.sh` for an isolated image/health smoke check when Docker is available. It creates and cleans up only its own resources.
