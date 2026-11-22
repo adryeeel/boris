@@ -1,6 +1,6 @@
 # Local containers and production setup
 
-Build and start the standalone app from the repository root:
+The local `compose.yml` builds the app from source. `compose.production.yml` runs a published image and is used by [CD](cd.md). Build and start the local standalone app from the repository root:
 
 ```bash
 docker compose up --build --wait

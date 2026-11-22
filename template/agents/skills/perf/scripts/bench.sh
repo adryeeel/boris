@@ -7,7 +7,7 @@
 #   runs     simulated passes (default: 3), followed by one DevTools-throttled pass
 #
 # Set PROJECT_ROOT to benchmark another checkout (e.g. a master worktree); it defaults
-# to the repo this script lives in.
+# to the workspace this script lives in.
 # Set BENCH_PORT to use another free loopback port (default: 3130).
 #
 # Set CPU_SLOWDOWN (e.g. 10) to reproduce PageSpeed's slow lab CPU: every pass then
@@ -21,7 +21,7 @@ LABEL=${1:?usage: bench.sh <label> [out-dir] [runs]}
 OUT=${2:-${TMPDIR:-/tmp}}
 RUNS=${3:-3}
 PORT=${BENCH_PORT:-3130}
-ROOT=${PROJECT_ROOT:-$(git -C "$(dirname "$0")" rev-parse --show-toplevel)}
+ROOT=${PROJECT_ROOT:-$(cd "$(dirname "$0")/../../../.." && pwd -P)}
 WEB="$ROOT/apps/web"
 
 mkdir -p "$OUT"
@@ -57,7 +57,7 @@ summary() {
 }
 
 lighthouse() {
-    npx -y lighthouse@latest "http://localhost:$PORT" --form-factor=mobile \
+    npx -y lighthouse@12.8.2 "http://localhost:$PORT" --form-factor=mobile \
         --only-categories=performance --output=json --output-path="$1" \
         --chrome-flags="--headless=new --no-sandbox" --quiet "${@:2}" >/dev/null 2>&1
 }

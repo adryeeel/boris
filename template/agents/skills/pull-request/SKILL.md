@@ -9,7 +9,7 @@ Read [Pull requests](../../../docs/contributing/pull-requests.md) and the [templ
 
 ## Prepare and submit
 
-Inspect the full diff, including intended untracked files. Reference the demand and slice, and follow its [completion rules](../../../docs/contributing/demand-planning.md); an intermediate PR must not close the demand. Obtain relevant validation and independent review; resolve material findings or disclose gaps. Write the final problem, resulting behavior, tradeoffs and useful evidence in the template, using a structured body or `--body-file`.
+Inspect the full diff, including intended untracked files. If a demand or slice exists, reference it and follow its [completion rules](../../../docs/contributing/demand-planning.md); an intermediate PR must not close the demand. Obtain relevant validation and [review](../../../docs/quality/review.md); resolve material findings or disclose gaps. Write the final problem, resulting behavior, tradeoffs and useful evidence in the template, using a structured body or `--body-file`.
 
 Push the feature branch and open a draft into the correct base. Apply the guide's title, label, assignee and issue-link conventions. Perform host-required PR linking immediately after create/takeover/push actions. Report failures without claiming publication or linking succeeded.
 

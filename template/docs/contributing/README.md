@@ -14,13 +14,13 @@ The Delivery Loop is the shared name for taking a change from an intended outcom
 
 4. **Implement and validate:** Make reviewable changes and check the integrated behavior against acceptance criteria. Select tests and specialist checks for the actual risks.
 
-5. **Review:** Inspect the final change independently and resolve material findings. Follow [Review](../quality/review.md) for scope and evidence.
+5. **Review:** Inspect the final change and resolve material findings. Follow [Review](../quality/review.md) for scope, independence and evidence.
 
 6. **Commit and open a PR:** Follow [Commits](commits.md) and [Pull requests](pull-requests.md), recording useful validation and limitations.
 
 7. **Merge and verify delivery:** Merge only with authorization and the required current-head evidence. Verify deployment and affected behavior when applicable, then close the demand when its acceptance target has evidence. See [demand completion](demand-planning.md#project-and-completion).
 
-8. **Assess completion:** Before the final handoff at the authorized stopping point, perform the [completion assessment](../agents/README.md#completion-assessment), including for successful tasks. Identify process gaps from the execution evidence and disposition them; a guidance change is conditional on a verified need.
+8. **Assess completion:** Before handoff, compare the outcome and evidence with the request, and report gaps. Investigate process improvements when execution shows a need; see [completion assessment](../agents/README.md#completion-assessment).
 
 Continue through authorized steps using evidence for the current change; revisit affected checks after fixes. Disposition discoveries through [demand planning](demand-planning.md#discoveries). Use [improvement within delivery](../agents/README.md#improvement-within-delivery) for warranted procedural corrections. A task can finish without changing its instructions.
 

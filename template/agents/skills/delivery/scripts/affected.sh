@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Replay CI's `turbo run … --affected` for past commits, in a clean worktree.
+# Inspect `turbo run … --affected` for past commits, in a clean worktree.
 #
 # usage: affected.sh [ref] [commit ...]
 #   ref      config to test (default: HEAD; commit your turbo.json change first)
@@ -9,7 +9,9 @@
 # marks every task affected, so this always runs from a throwaway worktree.
 set -euo pipefail
 
-ROOT=$(git rev-parse --show-toplevel)
+ROOT=$(cd "$(dirname "$0")/../../../.." && pwd -P)
+GIT_ROOT=$(git -C "$ROOT" rev-parse --show-toplevel)
+WORKSPACE=${ROOT#"$GIT_ROOT"}
 REF=${1:-HEAD}
 shift || true
 COMMITS=("$@")
@@ -17,10 +19,10 @@ COMMITS=("$@")
 
 TURBO=$(readlink -f "$ROOT/node_modules/.bin/turbo")
 WT=$(mktemp -d)
-trap 'git -C "$ROOT" worktree remove --force "$WT" >/dev/null 2>&1 || true' EXIT
-git -C "$ROOT" worktree add -q --detach "$WT" "$REF"
+trap 'git -C "$GIT_ROOT" worktree remove --force "$WT" >/dev/null 2>&1 || true' EXIT
+git -C "$GIT_ROOT" worktree add -q --detach "$WT" "$REF"
 
-cd "$WT"
+cd "$WT$WORKSPACE"
 for c in "${COMMITS[@]}"; do
     subject=$(git log -1 --format=%s "$c")
     tasks=$(TURBO_SCM_BASE="$c^" TURBO_SCM_HEAD="$c" "$TURBO" run build test:check lint:check fmt:check \

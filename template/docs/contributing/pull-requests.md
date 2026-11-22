@@ -4,15 +4,15 @@ Use [the PR template](../../.github/pull_request_template.md). A request to subm
 
 ## Prepare and submit
 
-Use `[<type>]: <description>` for the title, lowercase with no period. This differs from the commit format. Put repository identifiers in inline code, assign the author and apply the matching existing label (`fix` uses `bug`; `style`, `chore` and `revert` have no type label).
+Use `[<type>]: <description>` for the title, lowercase with no period. This differs from the commit format. Put repository identifiers in inline code, assign the author when appropriate and apply a matching label if it exists (`fix` uses `bug`).
 
-The body explains the concrete problem, resulting behavior and material tradeoffs. Include relevant validation and gaps so a reviewer can assess the result. Omit command-by-command history. Reference the demand and slice ID under Related issues. Use `Closes #<n>` only when merging that PR completes the demand; omit empty sections when there is no related issue. Image-affecting demands that require deployment verification remain open until that verification succeeds.
+The body explains the concrete problem, resulting behavior and material tradeoffs. Include relevant validation and gaps so a reviewer can assess the result. Omit command-by-command history. If there is a demand or slice, reference it under Related issues. Use `Closes #<n>` only when merging that PR completes the demand; omit empty sections when there is no related issue. Image-affecting demands that require deployment verification remain open until that verification succeeds.
 
 Use structured tool bodies or `--body-file` to preserve Markdown and avoid shell interpolation. Open with `gh pr create --draft` against `master` or the assigned parent. Follow host linking rules immediately after creating or pushing to the PR.
 
 ## Review and ready
 
-Complete relevant checks and [independent review](../quality/review.md) before readiness. Fix material findings in this work and disclose missing evidence. UI checks cover the changed interactions, relevant widths, themes and motion settings; docs changes need reference and factual checks.
+Complete relevant checks and [review](../quality/review.md) before readiness. Fix material findings in this work and disclose missing evidence. UI checks cover the changed interactions, relevant widths, themes and motion settings; docs changes need reference and factual checks.
 
 Draft pull requests skip the CI check job. When authorized, mark ready with `gh pr ready <n>` to start CI; inspect every expected check on the current head. Empty/skipped checks are not a pass. Later pushes rerun CI, so batch settled fixes where practical.
 

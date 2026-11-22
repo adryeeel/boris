@@ -78,7 +78,7 @@ if [ "${BASH_SOURCE[0]}" = "$0" ]; then
     set -euo pipefail
 
     PORT=${1:?usage: serve-prod.sh <port> [web-dir] [--no-build]}
-    WEB=${2:-$(git -C "$(dirname "$0")" rev-parse --show-toplevel)/apps/web}
+    WEB=${2:-$(cd "$(dirname "$0")/../../../.." && pwd -P)/apps/web}
 
     BUILD=1
     [ "${3:-}" = "--no-build" ] && BUILD=0

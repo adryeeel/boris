@@ -1,6 +1,6 @@
 # Review
 
-Review the intended behavior and connected code at the assigned base/head or explicit working-tree scope. An independent reviewer is read-only; the author resolves findings. Every PR receives review before readiness. A review requested without a PR can use the supplied goal and diff.
+Review the intended behavior and connected code at the assigned base/head or explicit working-tree scope. Every PR receives review before readiness. Prefer an independent reviewer when available and authorized; that reviewer is read-only and the author resolves findings. Otherwise, the author performs a focused self-review and discloses that independent review was unavailable. A review requested without a PR can use the supplied goal and diff.
 
 ## Select the scope
 

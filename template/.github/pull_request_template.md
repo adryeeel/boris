@@ -1,21 +1,11 @@
 ## Summary
 
-<!-- Short description of what this PR does -->
+<!-- Describe the problem, resulting behavior and relevant tradeoffs. -->
 
-## Motivation
+## Validation
 
-<!-- Why is this change needed? What problem does it solve? -->
-
--
-
-## Changes
-
-<!-- List the main changes in this PR -->
-
--
+<!-- List checks and results, plus any gaps. -->
 
 ## Related issues
 
-<!-- Reference the demand and slice; use Closes only when this merge completes acceptance. -->
-
--
+<!-- Reference related issues or slices if any; use Closes only when this merge completes acceptance. -->

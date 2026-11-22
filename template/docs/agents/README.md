@@ -40,13 +40,9 @@ Role briefs define distinct responsibilities; [instruction maintenance](instruct
 
 ## Completion assessment
 
-Before the final handoff of every task, including successful work, the main agent or lead assesses the completed execution at the authorized stopping point. This also applies when the requested result is a plan, diagnosis or draft PR; it does not require proceeding to merge or deployment. Children return evidence for the lead's assessment rather than starting separate retrospectives.
+Before handoff, compare the outcome and actual checks with the request, complete authorized outstanding work, and report gaps or blockers. This applies at the requested stopping point, including a plan or draft PR; it does not require a separate report or retrospective.
 
-Compare the original request and accepted scope with the session history, user corrections, failed or misleading checks, review findings and final delivery evidence. Look for incomplete acceptance, avoidable intervention or rework, confusion between the guidance source and delivery base, and stale completion records. Distinguish changed requirements or preferences from execution errors; success does not establish that the process had no gaps.
-
-Give each verified gap a concrete disposition with its evidence and cause: correct outstanding acceptance work, follow an existing rule, address a tooling limitation, or prepare a warranted guidance correction through [instruction maintenance](instructions.md#retain-improvements-from-delivery). Complete authorized corrections and recheck affected evidence before handoff. Keep out-of-scope improvements as proposals and identify unresolved blockers without claiming completion.
-
-Record the assessment and dispositions in the task report or authorized issue/PR; a short statement is enough when no verified gap remains. Reconcile the final delivery record with what actually happened and summarize material follow-up in the handoff. The assessment is required; a new instruction, agent or separate report is not.
+When execution exposes a process failure or repeated friction, identify its cause and disposition. Correct in-scope problems and recheck them; keep unrelated improvements as proposals. Use [instruction maintenance](instructions.md#retain-improvements-from-delivery) only when a guidance change is warranted.
 
 ## Improvement within delivery
 

@@ -27,4 +27,10 @@ Create a `production` GitHub Actions environment. Put credentials in its environ
 
 Install Docker and the Compose plugin on the target, authorize the SSH key and prepare the dedicated `DEPLOY_PATH`. The SSH user must be able to write there and run Docker. Compose publishes port 3000 on loopback by default; arrange a reverse proxy, domain and TLS separately. Set `PORT` in a server-side `.env` in that directory to change the host port. Add application runtime secrets through an appropriate server-side secret mechanism if the application needs them; they are not supplied by this workflow. Site constants are compiled into the image.
 
-Before enabling deployment, verify the host key fingerprint independently, package access, environment settings and the [local container smoke test](operations.md). On a failed rollout, inspect the workflow and container health. To roll back, explicitly authorize the operation, then on the server set `IMAGE_REF` to a previously published SHA-tagged image and `DEPLOY_PROJECT` to the same configured name, and run `docker compose -f compose.production.yml up -d --wait`. Authenticate the server for the pull as needed. Check health and the application afterward. Rollback is a separate operator action; this workflow has no rollback input.
+Before enabling deployment, verify the host key fingerprint independently, package access, environment settings and the [local container smoke test](operations.md). On a failed rollout, inspect the workflow and container health. To roll back, explicitly authorize the operation, then on the server change to `DEPLOY_PATH` and export `IMAGE_REF` with a previously published SHA-tagged image and `DEPLOY_PROJECT` with the configured project name. Authenticate the server for the pull as needed, then run:
+
+```bash
+docker compose --project-name "$DEPLOY_PROJECT" -f compose.production.yml up -d --wait
+```
+
+The explicit project name prevents an existing `COMPOSE_PROJECT_NAME` from targeting a different deployment. Check health and the application afterward. Rollback is a separate operator action; this workflow has no rollback input.

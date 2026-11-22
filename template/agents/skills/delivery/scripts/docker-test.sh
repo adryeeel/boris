@@ -8,7 +8,7 @@ set -euo pipefail
 
 SERVICE=${1:-web}
 PORT=${2:-3131}
-cd "$(git rev-parse --show-toplevel)"
+cd "$(dirname "$0")/../../../.."
 RUN_DIR=$(mktemp -d -t project-docker-test.XXXXXXXX)
 RUN_ID=${RUN_DIR##*.}
 IMAGE="project-$SERVICE:test-$RUN_ID"
