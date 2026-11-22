@@ -1,6 +1,7 @@
 @import 'tailwindcss';
-@custom-variant dark (&:where(.dark, .dark *));
+
 @source '../../../../apps/web/src';
+@custom-variant dark (&:where(.dark, .dark *));
 
 body {
     margin: 0;

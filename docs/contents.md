@@ -30,4 +30,4 @@ Use this checklist when starting a project. Decide what applies with the user, r
 
 - [ ] **Delivery and repository:** Decide on hosting, domain and TLS, credentials, remote cache, rollback, Git remote, branch protection and project management. CD is disabled until configured; `.github/` files do not create repository settings. Configure external services only when requested and authorized.
 
-- [ ] **Verification:** Add tests for new behavior and verify real user journeys and deployment when they exist. The supplied browser test covers theme selection; the placeholder app has no interaction tests.
+- [ ] **Verification:** Add tests for new behavior and verify real user journeys and deployment when they exist. The placeholder has no browser interaction tests.

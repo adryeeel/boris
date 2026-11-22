@@ -10,7 +10,7 @@ Choose checks by what can break.
 | Container packaging               | Docker smoke check                                             |
 | Documentation                     | Formatting, local links and source accuracy                    |
 
-`pnpm turbo run test:check` runs package tests. Both `apps/web` and `packages/ui` use the shared browser configuration. The UI package includes a theme provider test; the web package currently permits no test files.
+`pnpm turbo run test:check` runs package tests. Both `apps/web` and `packages/ui` use the shared browser configuration and currently permit no test files.
 
 Use the [everyday commands](../getting-started.md#everyday-commands) to run or watch tests and install Chromium.
 
