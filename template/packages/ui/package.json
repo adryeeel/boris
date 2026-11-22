@@ -3,7 +3,7 @@
     "private": true,
     "type": "module",
     "exports": {
-        "./icons/symbols": "./src/components/icons/symbols.tsx",
+        "./icons/*": "./src/components/icons/*.tsx",
         "./providers/motion": "./src/providers/motion/index.ts",
         "./providers/theme": "./src/providers/theme/index.ts",
         "./styles.css": "./src/styles/global.css"
