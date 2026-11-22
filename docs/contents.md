@@ -4,7 +4,7 @@ This foundation gives agents and contributors a working structure while leaving 
 
 ## Included
 
-- A minimal Next.js app in `apps/web`, a feature-based structure and shared styles in `packages/ui`, so work has a clear starting point. The home page displays configured title and description; it is a placeholder to replace.
+- A minimal Next.js app in `apps/web`, a feature-based structure, shared styles and theme and motion providers in `packages/ui`. The home page displays configured title and description; it is a placeholder to replace.
 
 - pnpm workspaces, Turbo tasks, TypeScript, Oxlint, Oxfmt and Vitest configuration to provide shared checks without inventing a new toolchain. Package manifests and configuration own exact versions and scripts.
 
@@ -24,10 +24,10 @@ Use this checklist when starting a project. Decide what applies with the user, r
 
 - [ ] **Identity and discovery:** Decide on brand assets, favicon and Apple icon, social sharing images, indexing, sitemap and robots rules. Only basic site metadata is supplied. If adding a `public/` directory, update the production image as described in [operations](../template/docs/delivery/operations.md).
 
-- [ ] **UI and presentation:** Decide whether to add a component library, accessible primitives, icons, typography, themes or motion. `packages/ui` currently contains shared styles, not a component library.
+- [ ] **UI and presentation:** Decide whether to add a component library, accessible primitives, icons, typography, theme styles or animation. `packages/ui` supplies styles and providers, not a component library or product theme.
 
 - [ ] **Content and services:** Decide on content authoring, data storage, authentication, analytics, error reporting and other integrations as needed; none is configured by default.
 
 - [ ] **Delivery and repository:** Decide on hosting, domain and TLS, credentials, remote cache, rollback, Git remote, branch protection and project management. CD is disabled until configured; `.github/` files do not create repository settings. Configure external services only when requested and authorized.
 
-- [ ] **Verification:** Add tests for new behavior and verify real user journeys and deployment when they exist. The initial placeholder has no browser interaction tests.
+- [ ] **Verification:** Add tests for new behavior and verify real user journeys and deployment when they exist. The supplied browser test covers theme selection; the placeholder app has no interaction tests.

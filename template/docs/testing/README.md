@@ -10,7 +10,7 @@ Choose checks by what can break.
 | Container packaging               | Docker smoke check                                             |
 | Documentation                     | Formatting, local links and source accuracy                    |
 
-`pnpm turbo run test:check` runs package tests. `apps/web/vitest.config.ts` is ready for browser suites and currently permits no test files. Browser dependencies are installed in the app; `packages/ui` does not carry unused test dependencies. Add a UI test config and dependencies when its first component needs them.
+`pnpm turbo run test:check` runs package tests. Both `apps/web` and `packages/ui` use the shared browser configuration. The UI package includes a theme provider test; the web package currently permits no test files.
 
 Use the [everyday commands](../getting-started.md#everyday-commands) to run or watch tests and install Chromium.
 
