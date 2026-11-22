@@ -18,6 +18,6 @@ A draft may be rewritten to correct wrong/invalid commits or consolidate accumul
 
 ## Hooks
 
-`pnpm install` installs Husky. `commit-msg` runs commitlint; `pre-commit` runs [lint-staged.config.ts](../../lint-staged.config.ts) for formatting and linting. Web and UI use their own configs so their React formatting and lint rules apply; other packages use the root config. The configs define the file patterns.
+`pnpm install` installs Husky. `commit-msg` runs commitlint; `pre-commit` runs [lint-staged.config.ts](../../lint-staged.config.ts) for formatting and linting. Oxlint and Oxfmt discover nested package configurations for matching files. The lint-staged config defines the file patterns.
 
 If a hook fails, fix the cause, inspect the resulting index and retry. Never bypass hooks. Root formatting must not rewrite app files using the wrong package configuration; see [Getting started](../getting-started.md).
