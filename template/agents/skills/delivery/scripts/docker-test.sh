@@ -37,7 +37,7 @@ DOCKER_BUILDKIT=1 docker build -q -f "apps/$SERVICE/Dockerfile" \
 IMAGE_ID=$(cat "$RUN_DIR/image-id")
 
 echo "== runtime user"
-docker run --rm --entrypoint sh "$IMAGE" -c id
+docker run --rm --entrypoint sh "$IMAGE" -c 'id; test "$(id -u)" -ne 0'
 
 echo "== health"
 docker create --cidfile "$RUN_DIR/container-id" --name "$NAME" -p "127.0.0.1:$PORT:3000" "$IMAGE" >/dev/null

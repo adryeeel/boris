@@ -3,7 +3,8 @@
     "compilerOptions": {
         "moduleResolution": "bundler",
         "paths": {
-            "@project-template/ui/*": ["./src/*"]
+            "@project-template/ui/*": ["./src/*"],
+            "@project-template/ui/primitive/*": ["./src/components/primitive/*"]
         }
     },
     "include": ["src/**/*.ts", "src/**/*.tsx"],
