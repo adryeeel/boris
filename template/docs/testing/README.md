@@ -12,11 +12,7 @@ Choose checks by what can break.
 
 `pnpm turbo run test:check` runs package tests. `apps/web/vitest.config.ts` is ready for browser suites and currently permits no test files. Browser dependencies are installed in the app; `packages/ui` does not carry unused test dependencies. Add a UI test config and dependencies when its first component needs them.
 
-```bash
-pnpm turbo run test:check
-pnpm --filter web exec playwright install chromium
-pnpm --filter web test:watch
-```
+Use the [everyday commands](../getting-started.md#everyday-commands) to run or watch tests and install Chromium.
 
 Run targeted tests during iteration, then checks appropriate to the combined change. Inspect selected Turbo tasks; a cached pass is not a new execution. Tests should protect behavior and errors, without duplicating implementation or testing a trivial wrapper.
 

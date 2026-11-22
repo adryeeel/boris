@@ -3,9 +3,13 @@
 After copying `template/` into a new repository, an agent or contributor configures that copied workspace directly. Run commands below from the copied workspace root; file links point to the source files in Boris. Use [Template values and variable names](placeholders.md) to distinguish values to customize from variable names that are interfaces. Establish the project name, package scope, title, description, production URL and HTML language with the user; do not invent product claims or a public URL. Keep `http://localhost:3000` until a real origin is known. Use a valid npm package name and scope, and a valid HTML language tag. The root name must differ from `web`, which is reserved for the application package.
 
 1. Update [site constants](../template/apps/web/src/const/site.ts): `title`, `description`, `url` and `language`. Use an HTTP(S) origin without credentials, a path, query or fragment. The application reads these values for its home page, metadata and document language. Keep secrets out of this file.
+
 2. Update the root `name` in [package.json](../template/package.json) and every shared package name under `packages/` to the chosen scope. Keep the application package name `web`: task filters, Docker paths and scripts depend on it.
+
 3. Search the repository for the old scope and update workspace dependencies, imports, TypeScript and tooling configuration, lint import grouping, and relevant documentation. Search for the old project name in configuration and docs, including the Compose project default and README title. Preserve package suffixes and unrelated text. Do not replace strings in dependencies, generated files, Git metadata, secrets or license notices. Run `rg --hidden -n '@project-template/|project-template' -g '!pnpm-lock.yaml' -g '!**/node_modules/**' -g '!**/.next/**' -g '!**/.turbo/**' -g '!.git/**'` to find the initial template references; for later renames search for the current values instead.
+
 4. Run `pnpm install` to regenerate [pnpm-lock.yaml](../template/pnpm-lock.yaml) and workspace links. After a scope change in an installed workspace, use `pnpm install --force` if links remain stale. Verify a subsequent `pnpm install --frozen-lockfile` succeeds.
+
 5. Run `pnpm run ci` and inspect the built or running home page, metadata and HTML language. Confirm package names and references agree, no stale old scope remains in owned files or the lockfile, and document any checks that could not run. Add project-specific tests when new behavior warrants them.
 
-Keep inherited license notices. Set a Git remote or deployment target only when requested and authorized. See [Template contents](contents.md) for included foundations and decisions the new project must make.
+Keep inherited license notices. Review the [project decisions checklist](contents.md#project-decisions-to-consider) for capabilities and services the template leaves to the new project.

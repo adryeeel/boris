@@ -13,7 +13,7 @@ Review the intended behavior and connected code at the assigned base/head or exp
 | Workflows, Docker or task caching                  | [Delivery](../delivery/README.md), applicable local validation                                                 |
 | Markdown or instructions                           | [Documentation](documentation.md), links, source facts and [instruction evaluation](../agents/instructions.md) |
 
-Skip unrelated areas. A Markdown-only cleanup needs reference and factual checks, not application browser tests. Inspect renamed paths across the repository. Wrapped primitives must have matching app import restrictions; non-runtime file kinds must be handled correctly by delivery filters.
+Skip unrelated areas. A Markdown-only cleanup needs reference and factual checks, not application browser tests. Inspect renamed paths across the repository. Check package boundaries and delivery filters when they are affected.
 
 Use the [docs skill](../../agents/skills/docs/SKILL.md) for changed guidance, including roles and skills. Report its ownership, focus, accuracy and navigation findings alongside mechanical results; formatting and valid links alone are insufficient. A single reviewer can cover this without a separate documentation agent.
 

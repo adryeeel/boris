@@ -20,7 +20,7 @@ Use host-supported event-driven monitoring when waiting is required. Children re
 
 ## Merge
 
-Merge only when authorized and the current head's expected checks and review are complete. The repository does not enforce these through branch protection, so inspect them explicitly.
+Merge only when authorized and the current head's expected checks and review are complete. Branch protections vary by repository; inspect the current settings and checks explicitly.
 
 Squash with `<type>(<scope>): <subject> (#<n>)` and a blank body. Validate the subject before merging:
 

@@ -33,4 +33,4 @@ Before running browser suites, install Chromium with `pnpm --filter web exec pla
 
 ## Containers
 
-Run `docker compose up --build --wait` for a local standalone container, then `docker compose down`. `PORT` changes the published loopback port; `COMPOSE_PROJECT_NAME` separates instances. Production deployment is opt-in; see [CD and secrets](delivery/cd.md) and [Operations](delivery/operations.md).
+Use [Operations](delivery/operations.md) for local containers. Production deployment is opt-in; see [CD and secrets](delivery/cd.md).

@@ -17,8 +17,6 @@ Push the feature branch and open a draft into the correct base. Apply the guide'
 
 Use ordinary commits for fixes. Recheck changed findings against the new head; keep title/body aligned with final scope. Rewrite only in the documented draft exceptions and within authorization.
 
-The user has given standing authorization for unblocked ready and merge actions within a requested delivery task. Do not ask for another approval after local validation and independent review permit readiness, or after all expected checks pass on the current head and no material findings or conflicts remain. Respect explicit stopping points such as a draft PR, review-only or local-only work, and any user hold. Resolve routine blockers within scope and continue when cleared; report blockers that require user input or unavailable access. This authorization does not extend to unrelated work, workflow dispatch, manual deployment or rollback.
-
-Drafts skip CI; mark ready after local validation and independent review so the expected checks run. Before merging, verify those checks and review on the current head, then validate the squash subject and use a blank merge body.
+Follow [Pull requests](../../../docs/contributing/pull-requests.md) for authorization, readiness, checks and merge requirements. Carry forward authorization already given and respect the requested stopping point. Do not assume a request to open a PR authorizes a merge or deployment.
 
 Follow host monitoring/lifecycle rules when waiting is required; children return status rather than watching. Return PR URL, head, validation/review state and exact pending action. Do not publish unrelated findings or deploy as a side effect.

@@ -10,4 +10,4 @@
 
 The app consumes shared styles from `packages/ui`. Formatter, linter, TypeScript and Vitest packages retain shared configuration. Add reusable UI there when needed and declare its dependencies and exports explicitly.
 
-Turbo task dependencies and output caching live in [turbo.json](../../turbo.json). Root preferences are global inputs so configuration changes invalidate builds. See [CI](../delivery/ci.md) when changing task behavior.
+Turbo task dependencies and output caching live in [turbo.json](../../turbo.json). See [CI](../delivery/ci.md) when changing task behavior.

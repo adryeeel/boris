@@ -16,7 +16,7 @@ Update affected docs and links in the same change. When moving a page, search Ma
 
 Use plain language and active verbs. One paragraph or list item develops one idea; split multi-step procedures into steps. Use tables for real comparisons or mappings, not long prose cells. Keep repository paths, commands and identifiers in inline code.
 
-Keep each paragraph on one source line. Separate long list items with blank lines. Avoid inventories of files that the directory already exposes and repeated setup instructions outside [Getting started](../getting-started.md).
+Keep each paragraph on one source line. Separate list items with blank lines. Avoid inventories of files that the directory already exposes and repeated setup instructions outside [Getting started](../getting-started.md).
 
 Measurements and investigation logs belong in the issue or PR. [Decisions](../decisions/README.md) keeps the durable choice, reason, reconsideration condition and evidence link. Do not state an old benchmark as a current performance guarantee.
 

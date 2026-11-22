@@ -21,9 +21,11 @@ Keep each assertion on one line when it fits the formatter's line width. Group a
 ## Coverage priorities
 
 1. Behavior: clicks, keys, navigation, callback effects and link destinations.
+
 2. Accessibility: roles, names, descriptions, state, keyboard paths and restored focus.
+
 3. Meaningful presentation: visibility at breakpoints, theme/accent roles, reduced motion and state feedback.
 
-`packages/ui` tests shared behavior, variants and contrast. App suites test how the page composes them, rather than repeating every shared style test. Compare contrast ratios from computed colours rather than palette names.
+Test shared behavior, variants and contrast in `packages/ui`; app suites should test how the page composes them rather than repeating shared tests. Compare contrast ratios from computed colours rather than palette names.
 
 Skip incidental padding/grid classes. Use `toHaveClass` for a meaningful token role and `toHaveStyle` for palette-independent state such as opacity. Exercise compiler fixtures through the real pipeline, and use builds/runtime checks for boundaries unit tests cannot prove.

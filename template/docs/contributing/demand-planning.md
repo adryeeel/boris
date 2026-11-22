@@ -20,8 +20,11 @@ Record material scope decisions with date and reason; keep the current acceptanc
 ## Discoveries
 
 - Fix a defect introduced by an open slice in that PR, then rerun affected checks.
+
 - Add work required for accepted behavior to the current slice or a new slice. Record a material scope decision before dependent implementation.
+
 - Triage an independent production defect for its own issue and delivery when warranted and authorized. Link it as a blocker only if it actually blocks this demand.
+
 - Record optional improvements as deferred or rejected; promote one to an issue only when it merits an independent decision or delivery. Never defer a required acceptance failure as optional.
 
 ## Project and completion

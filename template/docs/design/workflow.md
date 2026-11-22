@@ -11,8 +11,11 @@ Routine design decisions belong to the assigned designer/engineer. Ask for a use
 ## Brief, explore, critique, implement
 
 1. Establish the primary user task, entry point, desired next action, content hierarchy, constraints and observable acceptance criteria. Record evidence and assumptions separately.
+
 2. Explore different structures only when a real choice remains. Use realistic content, narrow/wide layouts, relevant themes and genuine alternate states. A static page does not need imaginary loading states.
+
 3. For consequential choices, obtain independent critique of rendered concepts against the task and brand. Findings name the screen/state, user impact, evidence and smallest useful change. The lead selects within authority unless the user asked to choose.
+
 4. Implement the chosen direction with real behavior. Check the integrated page for visual fidelity, keyboard tasks, focus, responsive reading order and relevant failure states. Recheck material deviations from the concept.
 
 Stop iterating when material problems are resolved and tradeoffs recorded. Agreement about taste is not a completion condition. Static images show composition, not working interaction; source inspection shows implementation, not verified visual quality. Identify the actual artifact/revision, viewport and environment for evidence.
