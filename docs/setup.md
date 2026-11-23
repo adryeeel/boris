@@ -8,8 +8,10 @@ After copying `template/` into a new repository, an agent or contributor configu
 
 3. Search the repository for the old scope and update workspace dependencies, imports, TypeScript and tooling configuration, lint import grouping, and relevant documentation. Search for the old project name in configuration and docs, including the Compose project default and README title. Preserve package suffixes and unrelated text. Do not replace strings in dependencies, generated files, Git metadata, secrets or license notices. Run `rg --hidden -n '@project-template/|project-template' -g '!pnpm-lock.yaml' -g '!**/node_modules/**' -g '!**/.next/**' -g '!**/.turbo/**' -g '!.git/**'` to find the initial template references; for later renames search for the current values instead.
 
-4. Run `pnpm install` to regenerate [pnpm-lock.yaml](../template/pnpm-lock.yaml) and workspace links. After a scope change in an installed workspace, use `pnpm install --force` if links remain stale. Verify a subsequent `pnpm install --frozen-lockfile` succeeds.
+4. In [Dependabot configuration](../template/.github/dependabot.yml), replace `adryeeel` with an assignee valid for the new repository, and create its `build` label.
 
-5. Run `pnpm run ci` and inspect the built or running home page, metadata and HTML language. Confirm package names and references agree, no stale old scope remains in owned files or the lockfile, and document any checks that could not run. Add project-specific tests when new behavior warrants them.
+5. Run `pnpm install` to regenerate [pnpm-lock.yaml](../template/pnpm-lock.yaml) and workspace links. After a scope change in an installed workspace, use `pnpm install --force` if links remain stale. Verify a subsequent `pnpm install --frozen-lockfile` succeeds.
+
+6. Run `pnpm run ci` and inspect the built or running home page, metadata and HTML language. Confirm package names and references agree, no stale old scope remains in owned files or the lockfile, and document any checks that could not run. Add project-specific tests when new behavior warrants them.
 
 Keep inherited license notices. Review the [project decisions checklist](contents.md#project-decisions-to-consider) for capabilities and services the template leaves to the new project.
